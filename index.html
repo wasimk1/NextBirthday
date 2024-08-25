@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total Days Remaining</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body align="center">
+    <p></p>
+    <p id="todaydate"></p>
+    <h4 id ="new1" ></h4>
+    <h2 id ="new"></h2>
+    <script>
+      const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      const d = new Date();
+      let day = days[d.getDay()];
+
+      var todaydate = new Date().toLocaleString();
+      var newdate = day + ", " + todaydate;
+      document.getElementById("todaydate").innerHTML =
+        "Today's Date:   " + newdate;
+
+      date1 = new Date();
+      date2 = new Date("Aug 22, 2025, 00:00:00 AM");
+
+      //calculate total number of seconds between two dates
+      var total_seconds = Math.abs(date2 - date1) / 1000;
+
+      //calculate days difference by dividing total seconds in a day
+      var days_difference = Math.floor(total_seconds / (60 * 60 * 24)+1);
+      if (days_difference == 0) {
+       document.getElementById("new1").innerHTML="<br>Hurray! the Special day come.";
+       document.getElementById("new").innerHTML="Let's take the delivery of my new bike Royal Enfied Classic 350";
+        
+      } else {
+        if (days_difference < 2) {
+          document.write(
+            "<br> Total no. of Days Remaining : " +
+              days_difference +
+              " Day to go!"
+          );
+        } else if (days_difference > 2) {
+          document.write(
+            "<br> Total no. of Days Remaining : " +
+              days_difference +
+              " Days to go!"
+          );
+        }
+      }
+    </script>
+   
+  </body>
+</html>
