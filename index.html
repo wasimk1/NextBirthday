@@ -31,25 +31,25 @@
         "Today's Date:   " + newdate;
 
       date1 = new Date();
-      date2 = new Date("Oct 11, 2024, 00:00:00 AM");
+      date2 = new Date("Oct 11, 2024, 00:00:00 AM ");
 
       //calculate total number of seconds between two dates
       var total_seconds = Math.abs(date2 - date1) / 1000;
 
       //calculate days difference by dividing total seconds in a day
       var days_difference = Math.floor(total_seconds / (60 * 60 * 24)+1);
-      if (days_difference == 0) {
+      if (date1 == date2) {
        document.getElementById("new1").innerHTML="<br>Hurray! the Special day come.";
        document.getElementById("new").innerHTML="Let's take the delivery of my new bike Honda Unicorn";
         
       } else {
-        if (days_difference < 2) {
+        if (days_difference < 2 ) {
           document.write(
             "<br> Total no. of Days Remaining : " +
               days_difference +
               " Day to go!"
           );
-        } else if (days_difference > 2) {
+        } else if (days_difference > 1) {
           document.write(
             "<br> Total no. of Days Remaining : " +
               days_difference +
